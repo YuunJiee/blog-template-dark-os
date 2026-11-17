@@ -69,6 +69,10 @@ export function PostHeatmap({ dateCounts, totalPosts, yearPosts, currentStreak, 
     d.setDate(startDate.getDate() + w * 7);
     const m = d.getMonth();
     if (m !== lastMonth) {
+      // A label needs ~3 columns of room; drop the previous (partial) month's
+      // label if this one starts too close to it, otherwise they overlap.
+      const prev = monthLabels[monthLabels.length - 1];
+      if (prev && w - prev.col < 3) monthLabels.pop();
       monthLabels.push({ label: MONTHS[m]!, col: w });
       lastMonth = m;
     }

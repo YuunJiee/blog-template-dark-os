@@ -90,7 +90,7 @@ export function renderPostOgImage({ title, tags, date, eyebrow, topRight, bottom
                 justifyContent: 'center',
               }}
             >
-              <span style={{ color: 'white', fontSize: '18px', fontWeight: 700 }}>Y</span>
+              <span style={{ color: 'white', fontSize: '18px', fontWeight: 700 }}>{siteConfig.name.charAt(0).toUpperCase()}</span>
             </div>
             <span style={{ color: '#94a3b8', fontSize: '20px', letterSpacing: '0.02em' }}>
               {siteConfig.name}
